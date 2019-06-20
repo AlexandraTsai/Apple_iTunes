@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            
+            searchBar.delegate = self
+        }
+    }
+    
     @IBOutlet weak var resultCollectionView: UICollectionView! {
         
         didSet {
@@ -25,19 +32,23 @@ class ViewController: UIViewController {
     
     var apps: [App]?
     var appStoreClient = AppStoreClient()
+    var term: String = "" {
+        
+        didSet {
+            
+             fetchApps()
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchApps()
-        
-        
-        
+    
     }
     
     func fetchApps() {
         
-        appStoreClient.fetchApps(withTerm: "jack johnson", inMedia: "movie", completion: { (apps) in
+        appStoreClient.fetchApps(withTerm: term, inMedia: "movie", completion: { (apps) in
             
             self.apps = apps
             self.resultCollectionView.reloadData()
@@ -75,7 +86,7 @@ extension ViewController: UICollectionViewDataSource {
             movieCell.setupWith(imageURL: imageURL,
                                 track: track,
                                 artist: artist,
-                                collection: "",
+                                collection: "CollectionName",
                                 hour: hour,
                                 minute: min,
                                 description: description)
@@ -92,8 +103,31 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: UIScreen.main.bounds.width - 10, height: 150)
+        return CGSize(width: UIScreen.main.bounds.width - 10, height: 200)
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 20
+    }
+    
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let text = searchBar.text {
+            
+            term = text
+        }
+        
+    }
+
 }

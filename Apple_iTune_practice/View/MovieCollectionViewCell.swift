@@ -20,6 +20,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 20
     }
     
     func setupWith(imageURL: URL,
