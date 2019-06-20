@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93DBB5260B92BD9F5D28475D /* Pods_Apple_iTune_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1BB4F2CFA36E5D282F6E79 /* Pods_Apple_iTune_practice.framework */; };
 		A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */; };
 		A8F2D9BF22BA793C00AE84D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BE22BA793C00AE84D1 /* ViewController.swift */; };
 		A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C022BA793C00AE84D1 /* Main.storyboard */; };
 		A8F2D9C522BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9C322BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld */; };
 		A8F2D9C722BA794100AE84D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C622BA794100AE84D1 /* Assets.xcassets */; };
 		A8F2D9CA22BA794100AE84D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C822BA794100AE84D1 /* LaunchScreen.storyboard */; };
+		A8F2D9D422BB4A1800AE84D1 /* AppStoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9D322BB4A1800AE84D1 /* AppStoreEndpoint.swift */; };
+		A8F2D9D622BB53FB00AE84D1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9D522BB53FB00AE84D1 /* App.swift */; };
+		A8F2D9D822BB56DA00AE84D1 /* AppStoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9D722BB56DA00AE84D1 /* AppStoreClient.swift */; };
+		A8F2D9DA22BB588E00AE84D1 /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9D922BB588E00AE84D1 /* NetworkProcessor.swift */; };
+		A8F2D9E222BBBD4500AE84D1 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9E022BBBD4500AE84D1 /* MovieTableViewCell.swift */; };
+		A8F2D9E322BBBD4500AE84D1 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9E122BBBD4500AE84D1 /* MovieTableViewCell.xib */; };
+		A8F2D9E622BBDB5500AE84D1 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9E422BBDB5500AE84D1 /* MovieCollectionViewCell.swift */; };
+		A8F2D9E722BBDB5500AE84D1 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9E522BBDB5500AE84D1 /* MovieCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		599F930918A895757D38383C /* Pods-Apple_iTune_practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple_iTune_practice.debug.xcconfig"; path = "Target Support Files/Pods-Apple_iTune_practice/Pods-Apple_iTune_practice.debug.xcconfig"; sourceTree = "<group>"; };
+		9C8E13B346F288D94E820380 /* Pods-Apple_iTune_practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple_iTune_practice.release.xcconfig"; path = "Target Support Files/Pods-Apple_iTune_practice/Pods-Apple_iTune_practice.release.xcconfig"; sourceTree = "<group>"; };
 		A8F2D9B922BA793C00AE84D1 /* Apple_iTune_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_iTune_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F2D9BE22BA793C00AE84D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +35,15 @@
 		A8F2D9C622BA794100AE84D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8F2D9C922BA794100AE84D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8F2D9CB22BA794100AE84D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8F2D9D322BB4A1800AE84D1 /* AppStoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreEndpoint.swift; sourceTree = "<group>"; };
+		A8F2D9D522BB53FB00AE84D1 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		A8F2D9D722BB56DA00AE84D1 /* AppStoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClient.swift; sourceTree = "<group>"; };
+		A8F2D9D922BB588E00AE84D1 /* NetworkProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
+		A8F2D9E022BBBD4500AE84D1 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		A8F2D9E122BBBD4500AE84D1 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		A8F2D9E422BBDB5500AE84D1 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8F2D9E522BBDB5500AE84D1 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		ED1BB4F2CFA36E5D282F6E79 /* Pods_Apple_iTune_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_iTune_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DBB5260B92BD9F5D28475D /* Pods_Apple_iTune_practice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78A503057125532D38CAEF62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED1BB4F2CFA36E5D282F6E79 /* Pods_Apple_iTune_practice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A8F2D9B022BA793C00AE84D1 = {
 			isa = PBXGroup;
 			children = (
 				A8F2D9BB22BA793C00AE84D1 /* Apple_iTune_practice */,
 				A8F2D9BA22BA793C00AE84D1 /* Products */,
+				C964D609EF7D9A96418F16E4 /* Pods */,
+				78A503057125532D38CAEF62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +88,55 @@
 			isa = PBXGroup;
 			children = (
 				A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */,
-				A8F2D9BE22BA793C00AE84D1 /* ViewController.swift */,
 				A8F2D9C022BA793C00AE84D1 /* Main.storyboard */,
+				A8F2D9DD22BBBC1200AE84D1 /* Controller */,
+				A8F2D9DC22BBBC0D00AE84D1 /* View */,
+				A8F2D9DB22BBBBF800AE84D1 /* Model */,
+				A8F2D9D322BB4A1800AE84D1 /* AppStoreEndpoint.swift */,
+				A8F2D9D922BB588E00AE84D1 /* NetworkProcessor.swift */,
+				A8F2D9D722BB56DA00AE84D1 /* AppStoreClient.swift */,
+				A8F2D9D522BB53FB00AE84D1 /* App.swift */,
 				A8F2D9C622BA794100AE84D1 /* Assets.xcassets */,
 				A8F2D9C822BA794100AE84D1 /* LaunchScreen.storyboard */,
 				A8F2D9CB22BA794100AE84D1 /* Info.plist */,
 				A8F2D9C322BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld */,
 			);
 			path = Apple_iTune_practice;
+			sourceTree = "<group>";
+		};
+		A8F2D9DB22BBBBF800AE84D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8F2D9DC22BBBC0D00AE84D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2D9E022BBBD4500AE84D1 /* MovieTableViewCell.swift */,
+				A8F2D9E122BBBD4500AE84D1 /* MovieTableViewCell.xib */,
+				A8F2D9E422BBDB5500AE84D1 /* MovieCollectionViewCell.swift */,
+				A8F2D9E522BBDB5500AE84D1 /* MovieCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8F2D9DD22BBBC1200AE84D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8F2D9BE22BA793C00AE84D1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C964D609EF7D9A96418F16E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				599F930918A895757D38383C /* Pods-Apple_iTune_practice.debug.xcconfig */,
+				9C8E13B346F288D94E820380 /* Pods-Apple_iTune_practice.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8F2D9CE22BA794100AE84D1 /* Build configuration list for PBXNativeTarget "Apple_iTune_practice" */;
 			buildPhases = (
+				7040FBEE5586D0C7B4B4B859 /* [CP] Check Pods Manifest.lock */,
 				A8F2D9B522BA793C00AE84D1 /* Sources */,
 				A8F2D9B622BA793C00AE84D1 /* Frameworks */,
 				A8F2D9B722BA793C00AE84D1 /* Resources */,
+				CF16FBF8A3D3E83A2D79201F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,22 +199,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F2D9E722BBDB5500AE84D1 /* MovieCollectionViewCell.xib in Resources */,
 				A8F2D9CA22BA794100AE84D1 /* LaunchScreen.storyboard in Resources */,
 				A8F2D9C722BA794100AE84D1 /* Assets.xcassets in Resources */,
+				A8F2D9E322BBBD4500AE84D1 /* MovieTableViewCell.xib in Resources */,
 				A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7040FBEE5586D0C7B4B4B859 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Apple_iTune_practice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF16FBF8A3D3E83A2D79201F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Apple_iTune_practice/Pods-Apple_iTune_practice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Apple_iTune_practice/Pods-Apple_iTune_practice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A8F2D9B522BA793C00AE84D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F2D9D822BB56DA00AE84D1 /* AppStoreClient.swift in Sources */,
 				A8F2D9BF22BA793C00AE84D1 /* ViewController.swift in Sources */,
+				A8F2D9DA22BB588E00AE84D1 /* NetworkProcessor.swift in Sources */,
 				A8F2D9C522BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld in Sources */,
+				A8F2D9D622BB53FB00AE84D1 /* App.swift in Sources */,
 				A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */,
+				A8F2D9E622BBDB5500AE84D1 /* MovieCollectionViewCell.swift in Sources */,
+				A8F2D9E222BBBD4500AE84D1 /* MovieTableViewCell.swift in Sources */,
+				A8F2D9D422BB4A1800AE84D1 /* AppStoreEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +413,7 @@
 		};
 		A8F2D9CF22BA794100AE84D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 599F930918A895757D38383C /* Pods-Apple_iTune_practice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +432,7 @@
 		};
 		A8F2D9D022BA794100AE84D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C8E13B346F288D94E820380 /* Pods-Apple_iTune_practice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
