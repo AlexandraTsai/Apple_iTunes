@@ -30,9 +30,7 @@ class ViewController: UIViewController {
             let nib2 = UINib(nibName: String(describing: MusicCollectionViewCell.self), bundle: nil)
             resultCollectionView.register(nib2, forCellWithReuseIdentifier: String(describing: MusicCollectionViewCell.self))
             
-            resultCollectionView.register(CollectionReusableView.self, forSupplementaryViewOfKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: String(describing: CollectionReusableView.self))
-            
-            
+            resultCollectionView.register(CollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
             
         }
     }
@@ -54,11 +52,22 @@ class ViewController: UIViewController {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resultCollectionView.alpha = 0
+    }
+    
     func fetchApps() {
         
         appStoreClient.fetchMovie(withTerm: term, inMedia: "movie", completion: { (movie) in
             
             self.movies = movie
+            
+            if movie?.count != 0 {
+                 self.resultCollectionView.alpha = 1
+            }
+           
             self.resultCollectionView.reloadData()
             
         })
@@ -66,6 +75,12 @@ class ViewController: UIViewController {
         appStoreClient.fetchMusic(withTerm: term, inMedia: "music", completion: { (music) in
             
             self.musics = music
+            
+            if music?.count != 0 {
+                
+                self.resultCollectionView.alpha = 1
+            }
+            
             self.resultCollectionView.reloadData()
             
         })
@@ -156,13 +171,16 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     
-        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: "UICollectionElementKindSectionHeader", withReuseIdentifier: String(describing: CollectionReusableView.self), for: indexPath)
-            
-        guard let headerCell = cell as? CollectionReusableView else {
-            return cell
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath)
+        
+        guard let headerCell = cell as? CollectionReusableView else { return cell }
+        
+        switch indexPath.section {
+        case 0:
+            headerCell.sectionHeaderLabel.text = "電影"
+        default:
+            headerCell.sectionHeaderLabel.text = "音樂"
         }
-       
-//        headerCell.headerLabel.text = "電影"
         
         headerCell.backgroundColor = UIColor.red
         
@@ -172,7 +190,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
-        return CGSize(width: resultCollectionView.bounds.width, height: 30)
+        return CGSize(width: resultCollectionView.bounds.width, height: 50)
         
     }
     
@@ -182,13 +200,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: UIScreen.main.bounds.width - 10, height: 200)
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: UIScreen.main.bounds.width - 10, height: 200)
+            
+        default:
+            return CGSize(width: UIScreen.main.bounds.width - 10, height: 150)
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

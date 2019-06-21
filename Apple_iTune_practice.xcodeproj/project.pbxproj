@@ -23,8 +23,6 @@
 		A8F2D9E922BC60A400AE84D1 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9E822BC60A400AE84D1 /* Music.swift */; };
 		A8F2D9ED22BC622C00AE84D1 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9EB22BC622C00AE84D1 /* MusicCollectionViewCell.swift */; };
 		A8F2D9EE22BC622C00AE84D1 /* MusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */; };
-		A8F2D9F122BC732400AE84D1 /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9EF22BC732300AE84D1 /* HeaderCollectionViewCell.swift */; };
-		A8F2D9F222BC732400AE84D1 /* HeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9F022BC732300AE84D1 /* HeaderCollectionViewCell.xib */; };
 		A8F2D9F522BC76B500AE84D1 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */; };
 		A8F2D9F622BC76B500AE84D1 /* CollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */; };
 /* End PBXBuildFile section */
@@ -49,8 +47,6 @@
 		A8F2D9E822BC60A400AE84D1 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		A8F2D9EB22BC622C00AE84D1 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCollectionViewCell.xib; sourceTree = "<group>"; };
-		A8F2D9EF22BC732300AE84D1 /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
-		A8F2D9F022BC732300AE84D1 /* HeaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionReusableView.xib; sourceTree = "<group>"; };
 		ED1BB4F2CFA36E5D282F6E79 /* Pods_Apple_iTune_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apple_iTune_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,8 +125,6 @@
 				A8F2D9E522BBDB5500AE84D1 /* MovieCollectionViewCell.xib */,
 				A8F2D9EB22BC622C00AE84D1 /* MusicCollectionViewCell.swift */,
 				A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */,
-				A8F2D9EF22BC732300AE84D1 /* HeaderCollectionViewCell.swift */,
-				A8F2D9F022BC732300AE84D1 /* HeaderCollectionViewCell.xib */,
 				A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */,
 				A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */,
 			);
@@ -220,7 +214,6 @@
 				A8F2D9C722BA794100AE84D1 /* Assets.xcassets in Resources */,
 				A8F2D9EE22BC622C00AE84D1 /* MusicCollectionViewCell.xib in Resources */,
 				A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */,
-				A8F2D9F222BC732400AE84D1 /* HeaderCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +282,6 @@
 				A8F2D9E922BC60A400AE84D1 /* Music.swift in Sources */,
 				A8F2D9F522BC76B500AE84D1 /* CollectionReusableView.swift in Sources */,
 				A8F2D9D422BB4A1800AE84D1 /* AppStoreEndpoint.swift in Sources */,
-				A8F2D9F122BC732400AE84D1 /* HeaderCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
