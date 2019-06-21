@@ -1,41 +1,41 @@
 //
-//  App.swift
+//  Music.swift
 //  Apple_iTune_practice
 //
-//  Created by 蔡佳宣 on 2019/6/20.
+//  Created by 蔡佳宣 on 2019/6/21.
 //  Copyright © 2019 蔡佳宣. All rights reserved.
 //
 
 import Foundation
-struct App {
+
+struct Music {
     var name: String
-    var description: String
     var artist: String
     var hour: Int
     var minute: Int
+    var collection: String
     var artworkUrl: URL?
     
     private struct APIKeys {
         static let name = "trackName"
-        static let description = "longDescription"
+        static let timeMillis = "trackTimeMillis"
+        static let collection = "collectionName"
         static let artist = "artistName"
         static let artworkURL = "artworkUrl100"
-        static let timeMillis = "trackTimeMillis"
     }
     
-    init?(dictionary: [String : Any])
-    {
+    init?(dictionary: [String : Any]) {
         guard let name = dictionary[APIKeys.name] as? String,
-            let artworkURLString = dictionary[APIKeys.artworkURL] as? String,
             let artistName = dictionary[APIKeys.artist] as? String,
-            let description = dictionary[APIKeys.description] as? String,
-            let timeMillis = dictionary[APIKeys.timeMillis] as? Int else {
+            let timeMillis = dictionary[APIKeys.timeMillis] as? Int,
+            let collection = dictionary[APIKeys.collection] as? String,
+            let artworkURLString = dictionary[APIKeys.artworkURL] as? String else {
                 return nil
         }
         
         self.name = name
-        self.description = description
         self.artist = artistName
+        self.collection = collection
         self.artworkUrl = URL(string: artworkURLString)
         
         let time = timeMillis/60000

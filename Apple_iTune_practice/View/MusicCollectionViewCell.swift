@@ -1,46 +1,37 @@
 //
-//  MovieTableViewCell.swift
+//  MusicCollectionViewCell.swift
 //  Apple_iTune_practice
 //
-//  Created by 蔡佳宣 on 2019/6/20.
+//  Created by 蔡佳宣 on 2019/6/21.
 //  Copyright © 2019 蔡佳宣. All rights reserved.
 //
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell {
+class MusicCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var trackView: UIImageView!
     @IBOutlet weak var trackName: UILabel!
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var collectionName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func setupWith(imageURL: URL,
                    track: String,
                    artist: String,
                    collection: String,
                    hour: Int,
-                   minute: Int,
-                   description: String) {
+                   minute: Int) {
         
         trackName.text = track
         artistName.text = artist
         collectionName.text = collection
-        descriptionLabel.text = description
-
+        
         if hour == 0 {
             timeLabel.text = "\(minute) Minutes"
         } else {
@@ -56,12 +47,12 @@ class MovieTableViewCell: UITableViewCell {
                 
                 if let imageData = data {
                     
-                    self?.imageView?.image = UIImage(data: imageData)
+                    self?.trackView?.image = UIImage(data: imageData)
                     
                 }
             }
             
         })
     }
-    
+
 }
