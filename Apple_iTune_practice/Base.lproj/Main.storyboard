@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
         <!--個人資料-->
         <scene sceneID="Fcg-kM-e7Q">
             <objects>
-                <tableViewController id="G8N-jx-Gqk" sceneMemberID="viewController">
+                <tableViewController id="G8N-jx-Gqk" customClass="ProfileTableViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yku-vS-KJs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,14 +94,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主題顏色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P20-62-UrL">
-                                                    <rect key="frame" x="31" y="11" width="70" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主題顏色" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P20-62-UrL">
+                                                    <rect key="frame" x="36" y="12" width="69.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="深色主題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN7-pe-sGA">
+                                                    <rect key="frame" x="246.5" y="13" width="61.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="P20-62-UrL" firstAttribute="centerY" secondItem="DR5-nW-9UD" secondAttribute="centerY" id="1WQ-nY-rJk"/>
+                                                <constraint firstItem="P20-62-UrL" firstAttribute="leading" secondItem="DR5-nW-9UD" secondAttribute="leadingMargin" constant="20" id="9zb-oB-fxi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PN7-pe-sGA" secondAttribute="trailing" constant="25" id="GDA-Lc-ea7"/>
+                                                <constraint firstItem="PN7-pe-sGA" firstAttribute="centerY" secondItem="DR5-nW-9UD" secondAttribute="centerY" id="wDr-dm-Nc5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="Q1l-u8-pSX" kind="show" id="uQm-W7-cGB"/>
@@ -118,14 +129,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收藏項目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXD-bm-Txm">
-                                                    <rect key="frame" x="35" y="11" width="70" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏項目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXD-bm-Txm">
+                                                    <rect key="frame" x="36" y="12" width="70" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共有 項收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-bG-zfg">
+                                                    <rect key="frame" x="227.5" y="13" width="80.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jT8-bG-zfg" secondAttribute="trailing" constant="25" id="0TN-xr-Vop"/>
+                                                <constraint firstItem="FXD-bm-Txm" firstAttribute="leading" secondItem="DfS-tk-R4T" secondAttribute="leadingMargin" constant="20" id="266-Fq-bTz"/>
+                                                <constraint firstItem="jT8-bG-zfg" firstAttribute="centerY" secondItem="DfS-tk-R4T" secondAttribute="centerY" id="9k5-5X-1Kh"/>
+                                                <constraint firstItem="FXD-bm-Txm" firstAttribute="centerY" secondItem="DfS-tk-R4T" secondAttribute="centerY" id="YOT-5W-3TT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="YfN-fv-10n" kind="show" id="cYW-Pf-YLk"/>
@@ -167,13 +189,32 @@
                     <view key="view" contentMode="scaleToFill" id="9tD-Mz-HNO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ut0-3I-KTr">
+                                <rect key="frame" x="100" y="94" width="175" height="29"/>
+                                <segments>
+                                    <segment title="電影"/>
+                                    <segment title="音樂"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VE0-K7-dqO">
+                                <rect key="frame" x="81" y="171" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V1R-El-qoV" firstAttribute="trailing" secondItem="Ut0-3I-KTr" secondAttribute="trailing" constant="100" id="2Wy-ZR-wFF"/>
+                            <constraint firstItem="Ut0-3I-KTr" firstAttribute="top" secondItem="V1R-El-qoV" secondAttribute="top" constant="30" id="qoC-9L-qkN"/>
+                            <constraint firstItem="Ut0-3I-KTr" firstAttribute="leading" secondItem="V1R-El-qoV" secondAttribute="leading" constant="100" id="zTr-sB-reb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V1R-El-qoV"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDl-ZR-1ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="1520"/>
+            <point key="canvasLocation" x="1023" y="1585"/>
         </scene>
         <!--Item-->
         <scene sceneID="vdj-kg-o8E">

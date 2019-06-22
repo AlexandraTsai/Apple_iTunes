@@ -17,6 +17,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var timeMillis: Int = 0
+    var url: URL?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +27,57 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.red.cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 20
+    }
+    
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
+        
+        guard let track = trackName.text,
+            let  description = descriptionLabel.text,
+            let  artistName = artistName.text,
+            let imageURL = url else { return }
+        
+        let dic = ["trackName": track,
+                   "longDescription": description,
+                   "artistName": artistName,
+                   "artworkUrl100": String(describing: imageURL),
+                   "trackTimeMillis": timeMillis] as [String : Any]
+        
+        if let movie: Movie = Movie(dictionary: dic) {
+            
+            print(movie)
+            
+//            let savedArray = UserDefaults.standard.array(forKey: "movie") as? [Movie] ?? [Movie]()
+            
+            if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
+                
+                if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
+                    
+                    print("====================")
+                    print(loadedMovie)
+                    
+                    var saved = loadedMovie
+                    
+                    saved.append(movie)
+                    
+                    UserDefaults.standard.set( try? PropertyListEncoder().encode(saved),
+                                               forKey: "movie")
+                }
+                
+            } else {
+                
+                print("----------CREAT------------")
+                
+                var saved = [Movie]()
+                
+                saved.append(movie)
+                
+                UserDefaults.standard.set( try? PropertyListEncoder().encode(saved),
+                                           forKey: "movie")
+                
+            }
+            
+        }
+        
     }
     
     func setupWith(imageURL: URL,
@@ -38,6 +92,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
         artistName.text = artist
         collectionName.text = collection
         descriptionLabel.text = description
+        
+        timeMillis = hour * 3600000 + minute * 60000
+        url = imageURL
         
         if hour == 0 {
             timeLabel.text = "\(minute) Minutes"

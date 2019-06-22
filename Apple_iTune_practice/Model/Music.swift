@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Music {
+struct Music: Codable {
     var name: String
     var artist: String
     var hour: Int

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
@@ -49,6 +49,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
+            
+            if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
+                
+                print(loadedMovie.count)
+            }
+        }
     
     }
     
@@ -89,7 +98,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDataSource {
 
     func numberOfSections(in: UICollectionView) -> Int {
         
@@ -196,7 +205,7 @@ extension ViewController: UICollectionViewDataSource {
     
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -222,7 +231,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-extension ViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         

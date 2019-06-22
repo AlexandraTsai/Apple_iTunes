@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: Codable {
     var name: String
     var description: String
     var artist: String
@@ -24,8 +24,7 @@ struct Movie {
         static let timeMillis = "trackTimeMillis"
     }
     
-    init?(dictionary: [String : Any])
-    {
+    init?(dictionary: [String : Any]) {
         guard let name = dictionary[APIKeys.name] as? String,
             let artworkURLString = dictionary[APIKeys.artworkURL] as? String,
             let artistName = dictionary[APIKeys.artist] as? String,
