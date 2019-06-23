@@ -27,6 +27,16 @@ class SavedDetailViewController: UIViewController {
             
         }
     }
+    var mode: ContentMode? {
+        
+        didSet {
+            
+            if let collectionView = savedCollectionView {
+                collectionView.reloadData()
+
+            }
+        }
+    }
     
     var movies = [Movie]()
     var musics = [Music]()
@@ -54,9 +64,9 @@ class SavedDetailViewController: UIViewController {
 
     func fetchSavedMusics() {
         
-        if let savedMovie = UserDefaults.standard.object(forKey: "music") as? Data {
+        if let savedMusic = UserDefaults.standard.object(forKey: "music") as? Data {
             
-            if let loadedMusic = try? PropertyListDecoder().decode([Music].self, from: savedMovie) {
+            if let loadedMusic = try? PropertyListDecoder().decode([Music].self, from: savedMusic) {
                 
                 musics = loadedMusic
                 
@@ -71,28 +81,56 @@ extension SavedDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return movies.count
+        switch mode {
+        case .movies?:
+            return movies.count
+        default:
+            return musics.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self), for: indexPath)
-        
-        guard let movieCell = cell as? MovieCollectionViewCell else { return cell }
-        
-        let currentMovie = movies[indexPath.item]
-        
-        guard let url = currentMovie.artworkUrl else { return cell }
-        
-        movieCell.setupWith(imageURL: url,
-                            track: currentMovie.name,
-                            artist: currentMovie.artist,
-                            collection: "collection",
-                            hour: currentMovie.hour,
-                            minute: currentMovie.minute,
-                            description: currentMovie.description)
-        
-        return movieCell
+        switch mode {
+        case .movies?:
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self), for: indexPath)
+            
+            guard let movieCell = cell as? MovieCollectionViewCell else { return cell }
+            
+            let currentMovie = movies[indexPath.item]
+            
+            guard let url = currentMovie.artworkUrl else { return cell }
+            
+            movieCell.setupWith(imageURL: url,
+                                track: currentMovie.name,
+                                artist: currentMovie.artist,
+                                collection: "collection",
+                                hour: currentMovie.hour,
+                                minute: currentMovie.minute,
+                                description: currentMovie.description)
+            
+            return movieCell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MusicCollectionViewCell.self), for: indexPath)
+            
+            guard let musicCell = cell as? MusicCollectionViewCell else { return cell }
+            
+            let currentMusic = musics[indexPath.item]
+            
+            guard let url = currentMusic.artworkUrl else { return cell }
+            
+            musicCell.setupWith(imageURL: url,
+                                track: currentMusic.name,
+                                artist: currentMusic.artist,
+                                collection: currentMusic.collection,
+                                hour: currentMusic.hour,
+                                minute: currentMusic.minute)
+            
+            return musicCell
+
+        }
     }
     
 }

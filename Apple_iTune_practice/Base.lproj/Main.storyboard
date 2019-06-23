@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="IKb-VR-KsF"/>
+                    <tabBarItem key="tabBarItem" title="" image="noun_Search_198944" selectedImage="noun_Search_198944" id="IKb-VR-KsF"/>
                     <connections>
                         <outlet property="resultCollectionView" destination="cr4-0y-uMI" id="MD9-se-Sz9"/>
                         <outlet property="searchBar" destination="Ftz-yz-GT6" id="Rp6-Fy-XOq"/>
@@ -182,6 +182,14 @@
             </objects>
             <point key="canvasLocation" x="1753" y="820"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="nqy-HB-0ZM">
+            <objects>
+                <pageViewController storyboardIdentifier="ALPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="geA-Kf-rvx" customClass="ALPageViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgJ-IJ-2B9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="1584"/>
+        </scene>
         <!--收藏項目-->
         <scene sceneID="0Ne-Uc-IpT">
             <objects>
@@ -197,10 +205,10 @@
                                     <segment title="音樂"/>
                                 </segments>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-3F-rNe">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-3F-rNe" customClass="SavedView" customModule="Apple_iTune_practice" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="152" width="375" height="466"/>
                                 <connections>
-                                    <segue destination="ZS5-H6-18P" kind="embed" id="i6p-50-6mD"/>
+                                    <segue destination="geA-Kf-rvx" kind="embed" identifier="ShowALPageViewController" id="th7-P5-Acb"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -221,19 +229,11 @@
             </objects>
             <point key="canvasLocation" x="1021.6" y="1584.5577211394304"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="fVz-qr-9Dd">
-            <objects>
-                <pageViewController storyboardIdentifier="ALPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="eoG-FS-eeh" customClass="ALPageViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff0-cy-0Gn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2518" y="1556"/>
-        </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="vdj-kg-o8E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="efY-cs-axZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bwX-sS-7YY"/>
+                    <tabBarItem key="tabBarItem" title="" image="noun_profile_1594259" id="bwX-sS-7YY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FJX-Bg-pmT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -249,24 +249,24 @@
             <point key="canvasLocation" x="84" y="819.94002998500753"/>
         </scene>
         <!--Saved Detail View Controller-->
-        <scene sceneID="sDT-V9-ivj">
+        <scene sceneID="hkn-NH-Wq0">
             <objects>
-                <viewController id="ZS5-H6-18P" customClass="SavedDetailViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3EH-AA-Q9n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="466"/>
+                <viewController storyboardIdentifier="SavedDetailViewController" id="Mkx-T1-wZk" customClass="SavedDetailViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x0u-78-lcG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZFi-Lv-au4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="466"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b10-Nu-yJW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L1y-Dy-gbz">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xih-MK-UoQ">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zqt-op-5Vp">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h8x-Vl-QMY">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -279,19 +279,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ZFi-Lv-au4" secondAttribute="bottom" id="Hsf-zl-uc1"/>
-                            <constraint firstAttribute="trailing" secondItem="ZFi-Lv-au4" secondAttribute="trailing" id="Kqg-Ej-UpA"/>
-                            <constraint firstItem="ZFi-Lv-au4" firstAttribute="top" secondItem="3EH-AA-Q9n" secondAttribute="top" id="Yl1-UM-ywS"/>
-                            <constraint firstItem="ZFi-Lv-au4" firstAttribute="leading" secondItem="3EH-AA-Q9n" secondAttribute="leading" id="hxZ-ik-BNK"/>
+                            <constraint firstItem="b10-Nu-yJW" firstAttribute="top" secondItem="hOO-J1-M4v" secondAttribute="top" id="V3I-Ql-Sye"/>
+                            <constraint firstItem="b10-Nu-yJW" firstAttribute="trailing" secondItem="hOO-J1-M4v" secondAttribute="trailing" id="Z7o-l6-g7J"/>
+                            <constraint firstItem="hOO-J1-M4v" firstAttribute="bottom" secondItem="b10-Nu-yJW" secondAttribute="bottom" id="rrn-EZ-Kq6"/>
+                            <constraint firstItem="b10-Nu-yJW" firstAttribute="leading" secondItem="hOO-J1-M4v" secondAttribute="leading" id="tAB-De-fsS"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="hOO-J1-M4v"/>
                     </view>
                     <connections>
-                        <outlet property="savedCollectionView" destination="ZFi-Lv-au4" id="vnD-eK-rdo"/>
+                        <outlet property="savedCollectionView" destination="b10-Nu-yJW" id="jXr-ey-F1y"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oT3-uM-rda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yf-nz-c0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="1584"/>
+            <point key="canvasLocation" x="2527" y="1606"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="noun_Search_198944" width="21" height="21"/>
+        <image name="noun_profile_1594259" width="21" height="21"/>
+    </resources>
 </document>

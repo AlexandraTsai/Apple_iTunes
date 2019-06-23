@@ -15,11 +15,57 @@ class MusicCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var collectionName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var timeMillis: Int = 0
+    var url: URL?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
+        
+        guard let track = trackName.text,
+            let  artistName = artistName.text,
+            let collection = collectionName.text,
+            let imageURL = url else { return }
+        
+        let dic = ["trackName": track,
+                   "artistName": artistName,
+                   "collectionName": collection,
+                   "artworkUrl100": String(describing: imageURL),
+                   "trackTimeMillis": timeMillis] as [String : Any]
+        
+        if let music: Music = Music(dictionary: dic) {
+            
+            if let savedMovie = UserDefaults.standard.object(forKey: "music") as? Data {
+                
+                if let loadedMusic = try? PropertyListDecoder().decode([Music].self, from: savedMovie) {
+                    
+                    var saved = loadedMusic
+                    
+                    saved.append(music)
+                    
+                    UserDefaults.standard.set( try? PropertyListEncoder().encode(saved),
+                                               forKey: "music")
+                }
+                
+            } else {
+                
+                var saved = [Music]()
+                
+                saved.append(music)
+                
+                UserDefaults.standard.set( try? PropertyListEncoder().encode(saved),
+                                           forKey: "music")
+                
+            }
+            
+        }
+        
+    }
+
 
     func setupWith(imageURL: URL,
                    track: String,
@@ -31,6 +77,9 @@ class MusicCollectionViewCell: UICollectionViewCell {
         trackName.text = track
         artistName.text = artist
         collectionName.text = collection
+        
+        url = imageURL
+        timeMillis = hour * 3600000 + minute * 60000
         
         if hour == 0 {
             timeLabel.text = "\(minute) Minutes"

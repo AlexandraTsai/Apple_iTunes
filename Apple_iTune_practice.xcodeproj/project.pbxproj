@@ -11,6 +11,8 @@
 		A8DEF86522BE25A5007ACFE1 /* ALPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86422BE25A5007ACFE1 /* ALPageViewController.swift */; };
 		A8DEF86722BE266E007ACFE1 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */; };
 		A8DEF86922BE2C0B007ACFE1 /* SavedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86822BE2C0B007ACFE1 /* SavedDetailViewController.swift */; };
+		A8DEF86B22BF2BAA007ACFE1 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */; };
+		A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */; };
 		A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */; };
 		A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */; };
 		A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C022BA793C00AE84D1 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		A8DEF86422BE25A5007ACFE1 /* ALPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALPageViewController.swift; sourceTree = "<group>"; };
 		A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		A8DEF86822BE2C0B007ACFE1 /* SavedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDetailViewController.swift; sourceTree = "<group>"; };
+		A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMode.swift; sourceTree = "<group>"; };
 		A8F2D9B922BA793C00AE84D1 /* Apple_iTune_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_iTune_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8DEF86C22BF330A007ACFE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A8F2D9B022BA793C00AE84D1 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 		A8F2D9BB22BA793C00AE84D1 /* Apple_iTune_practice */ = {
 			isa = PBXGroup;
 			children = (
+				A8DEF86C22BF330A007ACFE1 /* Model */,
 				A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */,
 				A8F2D9C022BA793C00AE84D1 /* Main.storyboard */,
 				A8F2D9DD22BBBC1200AE84D1 /* Controller */,
@@ -135,6 +149,7 @@
 				A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */,
 				A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */,
 				A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */,
+				A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,10 +302,12 @@
 				A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */,
 				A8DEF86722BE266E007ACFE1 /* SavedViewController.swift in Sources */,
 				A8F2D9DA22BB588E00AE84D1 /* NetworkProcessor.swift in Sources */,
+				A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */,
 				A8F2D9C522BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld in Sources */,
 				A8F2D9D622BB53FB00AE84D1 /* Movie.swift in Sources */,
 				A8DEF86922BE2C0B007ACFE1 /* SavedDetailViewController.swift in Sources */,
 				A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */,
+				A8DEF86B22BF2BAA007ACFE1 /* SavedView.swift in Sources */,
 				A8F2D9F822BCC6F500AE84D1 /* ProfileTableViewController.swift in Sources */,
 				A8F2D9ED22BC622C00AE84D1 /* MusicCollectionViewCell.swift in Sources */,
 				A8F2D9E622BBDB5500AE84D1 /* MovieCollectionViewCell.swift in Sources */,

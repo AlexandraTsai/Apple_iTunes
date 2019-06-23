@@ -10,7 +10,7 @@ import UIKit
 
 class SavedViewController: UIViewController {
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentView: SavedView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +20,10 @@ class SavedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "" {
+        if segue.identifier == "ShowALPageViewController" {
             if let alPageVC = segue.destination as? ALPageViewController {
                 
+                alPageVC.pageDelegate = contentView
             }
         }
     }

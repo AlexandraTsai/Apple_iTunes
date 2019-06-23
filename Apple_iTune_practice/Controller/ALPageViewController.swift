@@ -27,6 +27,10 @@ class ALPageViewController: UIPageViewController {
         
         controllers.append(detailVC)
         
+        let detailVC2 = storyboard.instantiateViewController(withIdentifier: String(describing: SavedDetailViewController.self))
+        
+        controllers.append(detailVC2)
+        
         self.pageDelegate?.setupPageController(numberOfPages: controllers.count)
         
         return controllers
@@ -38,6 +42,7 @@ class ALPageViewController: UIPageViewController {
 
         delegate = self
         dataSource = self
+        self.transitionStyle
         
         self.turnToPage(index: 0)
     }
@@ -65,6 +70,26 @@ class ALPageViewController: UIPageViewController {
     }
     
     func configureDisplaying(viewController: UIViewController) {
+        
+        for (index, vc) in controllers.enumerated() {
+            
+            if viewController === vc {
+                if let detailVC = viewController as? SavedDetailViewController {
+                    
+                    switch index {
+                    case 0:
+                        detailVC.mode = ContentMode.movies
+                        
+                    default:
+                        
+                        detailVC.mode = ContentMode.musics
+                    }
+                    
+                    self.pageDelegate?.turnPageController(to: index)
+                }
+            }
+            
+        }
         
     }
 }

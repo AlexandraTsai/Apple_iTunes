@@ -44,10 +44,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         if let movie: Movie = Movie(dictionary: dic) {
             
-            print(movie)
-            
-//            let savedArray = UserDefaults.standard.array(forKey: "movie") as? [Movie] ?? [Movie]()
-            
             if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
                 
                 if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
@@ -64,8 +60,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
                 }
                 
             } else {
-                
-                print("----------CREAT------------")
                 
                 var saved = [Movie]()
                 
