@@ -8,9 +8,19 @@
 
 import UIKit
 
+protocol SavedViewControllerDelegate: AnyObject {
+    
+    func changePageWith(index: Int)
+}
+
 class SavedViewController: UIViewController {
     
-    @IBOutlet weak var contentView: SavedView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    weak var segmentDelegate: SavedViewControllerDelegate?
+    
+    var pageViewController = ALPageViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +33,38 @@ class SavedViewController: UIViewController {
         if segue.identifier == "ShowALPageViewController" {
             if let alPageVC = segue.destination as? ALPageViewController {
                 
-                alPageVC.pageDelegate = contentView
+                pageViewController = alPageVC
+                pageViewController.pageDelegate = self
             }
         }
     }
+    
+    @IBAction func indexChanged(_ sender: AnyObject) {
+        
+        print(sender)
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SavedMovieViewController.self))
+            pageViewController.setViewControllers([vc!], direction: .reverse, animated: true, completion: nil)
+            
+        default:
+            let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: SavedMusicViewController.self))
+            pageViewController.setViewControllers([vc!], direction: .forward, animated: true, completion: nil)
+        }
+    }
  
+}
+
+extension SavedViewController: ALPageViewControllerDelegate {
+    
+    func turnSegmentController(to index: Int) {
+        
+        if let segmentedControl = segmentedControl {
+            
+            segmentedControl.selectedSegmentIndex = index
+        }
+        
+    }
+    
 }

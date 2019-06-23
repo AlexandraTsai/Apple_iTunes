@@ -48,9 +48,6 @@ class MovieCollectionViewCell: UICollectionViewCell {
                 
                 if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
                     
-                    print("====================")
-                    print(loadedMovie)
-                    
                     var saved = loadedMovie
                     
                     saved.append(movie)

@@ -111,6 +111,7 @@
                                                 <constraint firstItem="P20-62-UrL" firstAttribute="centerY" secondItem="DR5-nW-9UD" secondAttribute="centerY" id="1WQ-nY-rJk"/>
                                                 <constraint firstItem="P20-62-UrL" firstAttribute="leading" secondItem="DR5-nW-9UD" secondAttribute="leadingMargin" constant="20" id="9zb-oB-fxi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PN7-pe-sGA" secondAttribute="trailing" constant="25" id="GDA-Lc-ea7"/>
+                                                <constraint firstItem="PN7-pe-sGA" firstAttribute="leading" secondItem="P20-62-UrL" secondAttribute="trailing" constant="141" id="hZZ-In-yeg"/>
                                                 <constraint firstItem="PN7-pe-sGA" firstAttribute="centerY" secondItem="DR5-nW-9UD" secondAttribute="centerY" id="wDr-dm-Nc5"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -135,7 +136,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共有 項收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-bG-zfg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共有 項收藏" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-bG-zfg">
                                                     <rect key="frame" x="227.5" y="13" width="80.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -147,6 +148,7 @@
                                                 <constraint firstItem="FXD-bm-Txm" firstAttribute="leading" secondItem="DfS-tk-R4T" secondAttribute="leadingMargin" constant="20" id="266-Fq-bTz"/>
                                                 <constraint firstItem="jT8-bG-zfg" firstAttribute="centerY" secondItem="DfS-tk-R4T" secondAttribute="centerY" id="9k5-5X-1Kh"/>
                                                 <constraint firstItem="FXD-bm-Txm" firstAttribute="centerY" secondItem="DfS-tk-R4T" secondAttribute="centerY" id="YOT-5W-3TT"/>
+                                                <constraint firstItem="jT8-bG-zfg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FXD-bm-Txm" secondAttribute="trailing" constant="100" id="efA-9m-vZ1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -204,8 +206,11 @@
                                     <segment title="電影"/>
                                     <segment title="音樂"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="YfN-fv-10n" eventType="valueChanged" id="nX7-KK-fiW"/>
+                                </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-3F-rNe" customClass="SavedView" customModule="Apple_iTune_practice" customModuleProvider="target">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-3F-rNe">
                                 <rect key="frame" x="0.0" y="152" width="375" height="466"/>
                                 <connections>
                                     <segue destination="geA-Kf-rvx" kind="embed" identifier="ShowALPageViewController" id="th7-P5-Acb"/>
@@ -224,6 +229,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V1R-El-qoV"/>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Ut0-3I-KTr" id="4y0-Bq-RFo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDl-ZR-1ny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -248,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="84" y="819.94002998500753"/>
         </scene>
-        <!--Saved Detail View Controller-->
+        <!--Saved Movie View Controller-->
         <scene sceneID="hkn-NH-Wq0">
             <objects>
-                <viewController storyboardIdentifier="SavedDetailViewController" id="Mkx-T1-wZk" customClass="SavedDetailViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedMovieViewController" id="Mkx-T1-wZk" customClass="SavedMovieViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x0u-78-lcG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,6 +301,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Yf-nz-c0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2527" y="1606"/>
+        </scene>
+        <!--Saved Music View Controller-->
+        <scene sceneID="cw7-hu-tRq">
+            <objects>
+                <viewController storyboardIdentifier="SavedMusicViewController" id="5ow-96-pzS" customClass="SavedMusicViewController" customModule="Apple_iTune_practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMf-J1-XqS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bbA-5K-lWl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="goJ-7W-JmK">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nkp-JQ-0v2">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bbA-5K-lWl" firstAttribute="top" secondItem="zas-jO-IrC" secondAttribute="top" id="1OJ-ZT-tYb"/>
+                            <constraint firstItem="bbA-5K-lWl" firstAttribute="leading" secondItem="zas-jO-IrC" secondAttribute="leading" id="bbE-PT-4ht"/>
+                            <constraint firstItem="zas-jO-IrC" firstAttribute="bottom" secondItem="bbA-5K-lWl" secondAttribute="bottom" id="lKV-zf-BdO"/>
+                            <constraint firstItem="zas-jO-IrC" firstAttribute="trailing" secondItem="bbA-5K-lWl" secondAttribute="trailing" id="w3u-NP-eAX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zas-jO-IrC"/>
+                    </view>
+                    <connections>
+                        <outlet property="savedCollectionView" destination="bbA-5K-lWl" id="XRC-yC-cOI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50x-Hi-DMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3241" y="1607"/>
         </scene>
     </scenes>
     <resources>

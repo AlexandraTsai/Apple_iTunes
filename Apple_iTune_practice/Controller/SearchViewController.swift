@@ -49,15 +49,6 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
-            
-            if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
-                
-                print(loadedMovie.count)
-            }
-        }
     
     }
     

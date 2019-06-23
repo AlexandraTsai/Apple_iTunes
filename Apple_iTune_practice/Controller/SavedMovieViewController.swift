@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedDetailViewController: UIViewController {
+class SavedMovieViewController: UIViewController {
 
     @IBOutlet weak var savedCollectionView: UICollectionView! {
         
@@ -20,10 +20,6 @@ class SavedDetailViewController: UIViewController {
             let nib = UINib(nibName: String(describing: MovieCollectionViewCell.self), bundle: nil)
             savedCollectionView.register(nib,
                                          forCellWithReuseIdentifier: String(describing: MovieCollectionViewCell.self))
-            
-            let nib2 = UINib(nibName: String(describing: MusicCollectionViewCell.self), bundle: nil)
-            savedCollectionView.register(nib2,
-                                         forCellWithReuseIdentifier: String(describing: MusicCollectionViewCell.self))
             
         }
     }
@@ -39,14 +35,17 @@ class SavedDetailViewController: UIViewController {
     }
     
     var movies = [Movie]()
-    var musics = [Music]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fetchSavedMovies()
-        fetchSavedMusics()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     func fetchSavedMovies() {
@@ -62,39 +61,19 @@ class SavedDetailViewController: UIViewController {
         
     }
 
-    func fetchSavedMusics() {
-        
-        if let savedMusic = UserDefaults.standard.object(forKey: "music") as? Data {
-            
-            if let loadedMusic = try? PropertyListDecoder().decode([Music].self, from: savedMusic) {
-                
-                musics = loadedMusic
-                
-            }
-        }
-        
-    }
-
 }
 
-extension SavedDetailViewController: UICollectionViewDataSource {
+extension SavedMovieViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        switch mode {
-        case .movies?:
-            return movies.count
-        default:
-            return musics.count
-        }
+        
+        return movies.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch mode {
-        case .movies?:
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCollectionViewCell.self), for: indexPath)
             
             guard let movieCell = cell as? MovieCollectionViewCell else { return cell }
@@ -112,34 +91,32 @@ extension SavedDetailViewController: UICollectionViewDataSource {
                                 description: currentMovie.description)
             
             return movieCell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MusicCollectionViewCell.self), for: indexPath)
-            
-            guard let musicCell = cell as? MusicCollectionViewCell else { return cell }
-            
-            let currentMusic = musics[indexPath.item]
-            
-            guard let url = currentMusic.artworkUrl else { return cell }
-            
-            musicCell.setupWith(imageURL: url,
-                                track: currentMusic.name,
-                                artist: currentMusic.artist,
-                                collection: currentMusic.collection,
-                                hour: currentMusic.hour,
-                                minute: currentMusic.minute)
-            
-            return musicCell
-
-        }
+        
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MusicCollectionViewCell.self), for: indexPath)
+//
+//            guard let musicCell = cell as? MusicCollectionViewCell else { return cell }
+//
+//            let currentMusic = musics[indexPath.item]
+//
+//            guard let url = currentMusic.artworkUrl else { return cell }
+//
+//            musicCell.setupWith(imageURL: url,
+//                                track: currentMusic.name,
+//                                artist: currentMusic.artist,
+//                                collection: currentMusic.collection,
+//                                hour: currentMusic.hour,
+//                                minute: currentMusic.minute)
+//
+//            return musicCell
     }
     
 }
 
-extension SavedDetailViewController: UICollectionViewDelegate {
+extension SavedMovieViewController: UICollectionViewDelegate {
     
 }
 
-extension SavedDetailViewController: UICollectionViewDelegateFlowLayout {
+extension SavedMovieViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

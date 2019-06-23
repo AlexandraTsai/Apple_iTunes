@@ -10,9 +10,9 @@
 		93DBB5260B92BD9F5D28475D /* Pods_Apple_iTune_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1BB4F2CFA36E5D282F6E79 /* Pods_Apple_iTune_practice.framework */; };
 		A8DEF86522BE25A5007ACFE1 /* ALPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86422BE25A5007ACFE1 /* ALPageViewController.swift */; };
 		A8DEF86722BE266E007ACFE1 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */; };
-		A8DEF86922BE2C0B007ACFE1 /* SavedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86822BE2C0B007ACFE1 /* SavedDetailViewController.swift */; };
-		A8DEF86B22BF2BAA007ACFE1 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */; };
+		A8DEF86922BE2C0B007ACFE1 /* SavedMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */; };
 		A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */; };
+		A8DEF87022BF6F22007ACFE1 /* SavedMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */; };
 		A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */; };
 		A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */; };
 		A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C022BA793C00AE84D1 /* Main.storyboard */; };
@@ -38,9 +38,9 @@
 		9C8E13B346F288D94E820380 /* Pods-Apple_iTune_practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apple_iTune_practice.release.xcconfig"; path = "Target Support Files/Pods-Apple_iTune_practice/Pods-Apple_iTune_practice.release.xcconfig"; sourceTree = "<group>"; };
 		A8DEF86422BE25A5007ACFE1 /* ALPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALPageViewController.swift; sourceTree = "<group>"; };
 		A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
-		A8DEF86822BE2C0B007ACFE1 /* SavedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDetailViewController.swift; sourceTree = "<group>"; };
-		A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMovieViewController.swift; sourceTree = "<group>"; };
 		A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMode.swift; sourceTree = "<group>"; };
+		A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusicViewController.swift; sourceTree = "<group>"; };
 		A8F2D9B922BA793C00AE84D1 /* Apple_iTune_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_iTune_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 				A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */,
 				A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */,
 				A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */,
-				A8DEF86A22BF2BAA007ACFE1 /* SavedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,7 +160,8 @@
 				A8F2D9F722BCC6F500AE84D1 /* ProfileTableViewController.swift */,
 				A8DEF86422BE25A5007ACFE1 /* ALPageViewController.swift */,
 				A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */,
-				A8DEF86822BE2C0B007ACFE1 /* SavedDetailViewController.swift */,
+				A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */,
+				A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,14 +300,14 @@
 			files = (
 				A8F2D9D822BB56DA00AE84D1 /* AppStoreClient.swift in Sources */,
 				A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */,
+				A8DEF87022BF6F22007ACFE1 /* SavedMusicViewController.swift in Sources */,
 				A8DEF86722BE266E007ACFE1 /* SavedViewController.swift in Sources */,
 				A8F2D9DA22BB588E00AE84D1 /* NetworkProcessor.swift in Sources */,
 				A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */,
 				A8F2D9C522BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld in Sources */,
 				A8F2D9D622BB53FB00AE84D1 /* Movie.swift in Sources */,
-				A8DEF86922BE2C0B007ACFE1 /* SavedDetailViewController.swift in Sources */,
+				A8DEF86922BE2C0B007ACFE1 /* SavedMovieViewController.swift in Sources */,
 				A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */,
-				A8DEF86B22BF2BAA007ACFE1 /* SavedView.swift in Sources */,
 				A8F2D9F822BCC6F500AE84D1 /* ProfileTableViewController.swift in Sources */,
 				A8F2D9ED22BC622C00AE84D1 /* MusicCollectionViewCell.swift in Sources */,
 				A8F2D9E622BBDB5500AE84D1 /* MovieCollectionViewCell.swift in Sources */,
