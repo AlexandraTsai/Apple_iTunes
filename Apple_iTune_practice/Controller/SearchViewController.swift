@@ -182,7 +182,7 @@ extension SearchViewController: UICollectionViewDataSource {
             headerCell.sectionHeaderLabel.text = "音樂"
         }
         
-        headerCell.backgroundColor = UIColor.red
+        headerCell.sectionHeaderLabel.textColor = ALColor.c2
         
         return headerCell
         

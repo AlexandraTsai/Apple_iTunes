@@ -17,6 +17,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var savedButton: ALButton!
+    
+    @IBOutlet weak var unsavedButton: ALButton!
+    
     var timeMillis: Int = 0
     var url: URL?
     
@@ -24,7 +28,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderColor = ALColor.c1.cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 20
     }
@@ -69,6 +73,22 @@ class MovieCollectionViewCell: UICollectionViewCell {
             
         }
         
+        NotificationCenter.default.post(name: .savedItemChanged, object: nil)
+        
+    }
+    
+    @IBAction func unsavedBtnTapped(_ sender: UIButton) {
+        
+        if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
+            
+            if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
+                
+//                if loadedMovie.filter({ $0.name == ""}) {
+//
+//                }
+                
+            }
+        }
     }
     
     func setupWith(imageURL: URL,

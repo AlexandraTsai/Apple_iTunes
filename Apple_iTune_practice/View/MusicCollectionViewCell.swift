@@ -64,8 +64,9 @@ class MusicCollectionViewCell: UICollectionViewCell {
             
         }
         
+        NotificationCenter.default.post(name: .savedItemChanged, object: nil)
+        
     }
-
 
     func setupWith(imageURL: URL,
                    track: String,

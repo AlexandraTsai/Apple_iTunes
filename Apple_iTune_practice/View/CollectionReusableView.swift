@@ -25,6 +25,8 @@ class CollectionReusableView: UICollectionReusableView {
         // Initialization code
         
         self.addSubview(sectionHeaderLabel)
+        
+        setup()
     }
     
     override init(frame: CGRect) {
@@ -32,10 +34,18 @@ class CollectionReusableView: UICollectionReusableView {
         
         self.addSubview(sectionHeaderLabel)
         
+        setup()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+    }
+    
+    func setup() {
+        
+        self.backgroundColor = ALColor.c1
     }
    
 }

@@ -84,7 +84,6 @@ class ALPageViewController: UIPageViewController {
 
                     }
                     
-//                    self.pageDelegate?.turnPageController(to: index)
                 }
             }
             

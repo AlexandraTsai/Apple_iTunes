@@ -13,6 +13,10 @@
 		A8DEF86922BE2C0B007ACFE1 /* SavedMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */; };
 		A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */; };
 		A8DEF87022BF6F22007ACFE1 /* SavedMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */; };
+		A8DEF87222BF7997007ACFE1 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87122BF7997007ACFE1 /* Notification+Extension.swift */; };
+		A8DEF87422BF8179007ACFE1 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */; };
+		A8DEF87622BFCA22007ACFE1 /* ALButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87522BFCA22007ACFE1 /* ALButton.swift */; };
+		A8DEF87822C0629F007ACFE1 /* ThemeColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87722C0629F007ACFE1 /* ThemeColorTableViewController.swift */; };
 		A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */; };
 		A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */; };
 		A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C022BA793C00AE84D1 /* Main.storyboard */; };
@@ -41,6 +45,10 @@
 		A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMovieViewController.swift; sourceTree = "<group>"; };
 		A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMode.swift; sourceTree = "<group>"; };
 		A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMusicViewController.swift; sourceTree = "<group>"; };
+		A8DEF87122BF7997007ACFE1 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		A8DEF87522BFCA22007ACFE1 /* ALButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALButton.swift; sourceTree = "<group>"; };
+		A8DEF87722C0629F007ACFE1 /* ThemeColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorTableViewController.swift; sourceTree = "<group>"; };
 		A8F2D9B922BA793C00AE84D1 /* Apple_iTune_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_iTune_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */,
+				A8DEF87122BF7997007ACFE1 /* Notification+Extension.swift */,
+				A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -149,6 +159,7 @@
 				A8F2D9EC22BC622C00AE84D1 /* MusicCollectionViewCell.xib */,
 				A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */,
 				A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */,
+				A8DEF87522BFCA22007ACFE1 /* ALButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +173,7 @@
 				A8DEF86622BE266E007ACFE1 /* SavedViewController.swift */,
 				A8DEF86822BE2C0B007ACFE1 /* SavedMovieViewController.swift */,
 				A8DEF86F22BF6F22007ACFE1 /* SavedMusicViewController.swift */,
+				A8DEF87722C0629F007ACFE1 /* ThemeColorTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,15 +318,19 @@
 				A8DEF86E22BF331B007ACFE1 /* ContentMode.swift in Sources */,
 				A8F2D9C522BA793C00AE84D1 /* Apple_iTune_practice.xcdatamodeld in Sources */,
 				A8F2D9D622BB53FB00AE84D1 /* Movie.swift in Sources */,
+				A8DEF87222BF7997007ACFE1 /* Notification+Extension.swift in Sources */,
 				A8DEF86922BE2C0B007ACFE1 /* SavedMovieViewController.swift in Sources */,
+				A8DEF87622BFCA22007ACFE1 /* ALButton.swift in Sources */,
 				A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */,
 				A8F2D9F822BCC6F500AE84D1 /* ProfileTableViewController.swift in Sources */,
 				A8F2D9ED22BC622C00AE84D1 /* MusicCollectionViewCell.swift in Sources */,
 				A8F2D9E622BBDB5500AE84D1 /* MovieCollectionViewCell.swift in Sources */,
 				A8F2D9E922BC60A400AE84D1 /* Music.swift in Sources */,
 				A8DEF86522BE25A5007ACFE1 /* ALPageViewController.swift in Sources */,
+				A8DEF87422BF8179007ACFE1 /* ThemeColor.swift in Sources */,
 				A8F2D9F522BC76B500AE84D1 /* CollectionReusableView.swift in Sources */,
 				A8F2D9D422BB4A1800AE84D1 /* AppStoreEndpoint.swift in Sources */,
+				A8DEF87822C0629F007ACFE1 /* ThemeColorTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
