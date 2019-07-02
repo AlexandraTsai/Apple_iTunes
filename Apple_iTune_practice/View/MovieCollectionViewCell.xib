@@ -27,13 +27,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85p-qf-MM5">
-                        <rect key="frame" x="120" y="10" width="190" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <rect key="frame" x="120" y="10" width="190" height="23"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-eO-xtg">
-                        <rect key="frame" x="120" y="39" width="190" height="18"/>
+                        <rect key="frame" x="120" y="38" width="190" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="xQt-aI-fqS"/>
                         </constraints>
@@ -42,19 +42,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8j-v4-urY">
-                        <rect key="frame" x="120" y="62" width="190" height="18"/>
+                        <rect key="frame" x="120" y="61" width="190" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L7-LJ-nx7">
-                        <rect key="frame" x="120" y="85" width="190" height="18"/>
+                        <rect key="frame" x="120" y="84" width="190" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-rK-TCV">
-                        <rect key="frame" x="120" y="108" width="270" height="63"/>
+                        <rect key="frame" x="120" y="107" width="270" height="64"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -65,7 +65,8 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="PoB-UL-VHF"/>
                         </constraints>
-                        <state key="normal" title="收藏">
+                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                        <state key="normal" title="Save">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
@@ -78,7 +79,8 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="jx9-1z-ZMR"/>
                         </constraints>
-                        <state key="normal" title="取消收藏">
+                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                        <state key="normal" title="Unsave">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>

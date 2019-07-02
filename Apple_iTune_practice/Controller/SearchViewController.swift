@@ -37,6 +37,9 @@ class SearchViewController: UIViewController {
     
     var movies: [Movie]?
     var musics: [Music]?
+    
+    var savedMovies: [Movie]?
+    
     var appStoreClient = AppStoreClient()
     var term: String = "" {
         
@@ -50,12 +53,32 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        fetchSavedMovies()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         resultCollectionView.alpha = 0
+        
+        self.view.backgroundColor = ALColor.c1
+        self.resultCollectionView.backgroundColor = ALColor.c1
+        
+        self.tabBarController?.tabBar.tintColor = ALColor.c4
+        self.tabBarController?.tabBar.barTintColor = ALColor.c1
+    }
+    
+    func fetchSavedMovies() {
+        
+        if let savedMovie = UserDefaults.standard.object(forKey: "movie") as? Data {
+            
+            if let loadedMovie = try? PropertyListDecoder().decode([Movie].self, from: savedMovie) {
+                
+                savedMovies = loadedMovie
+                
+            }
+        }
+        
     }
     
     func fetchApps() {
@@ -127,6 +150,19 @@ extension SearchViewController: UICollectionViewDataSource {
             
             let app = movies?[indexPath.row]
             
+            if ((savedMovies?.filter({$0.name == app?.name && $0.artworkUrl == app?.artworkUrl && $0.description == app?.description })) != nil) {
+                
+                print("===============================")
+                print("Already saved")
+                
+                movieCell.unsavedButton.alpha = 1
+                
+            } else {
+                
+                print("unsaved")
+                movieCell.unsavedButton.alpha = 0
+            }
+            
             if let imageURL = app?.artworkUrl,
                 let track = app?.name,
                 let artist = app?.artist,
@@ -177,9 +213,9 @@ extension SearchViewController: UICollectionViewDataSource {
         
         switch indexPath.section {
         case 0:
-            headerCell.sectionHeaderLabel.text = "電影"
+            headerCell.sectionHeaderLabel.text = "Movie"
         default:
-            headerCell.sectionHeaderLabel.text = "音樂"
+            headerCell.sectionHeaderLabel.text = "Music"
         }
         
         headerCell.sectionHeaderLabel.textColor = ALColor.c2
@@ -200,8 +236,31 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+//        collectionViewLayout.estimatedItemSize
+        
         switch indexPath.section {
         case 0:
+            
+            if let description = movies?[indexPath.item].description,
+                let trackName = movies?[indexPath.item].name {
+            
+            let approximateWidth = collectionView.frame.width - 20 - 100 - 10 * 3
+            let size = CGSize(width: approximateWidth, height: 1000)
+            let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+            
+            let estimatedDescriptionFrame = NSString(string: description).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+                
+            let attributesForTitle = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
+
+            let approximateTitleWidth = collectionView.frame.width - 20 - 100 - 10 * 3 - 65 - 5
+            let sizeForTitle = CGSize(width: approximateTitleWidth, height: 1000)
+
+            let estimatedTitileFrame = NSString(string: trackName).boundingRect(with: sizeForTitle, options: .usesLineFragmentOrigin, attributes: attributesForTitle, context: nil)
+                
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: estimatedDescriptionFrame.height + 4 * 5 + 18 * 3 + estimatedTitileFrame.height + 10 * 2 + 20)
+                
+            }
+            
             return CGSize(width: UIScreen.main.bounds.width - 10, height: 200)
             
         default:

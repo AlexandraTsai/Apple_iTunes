@@ -46,6 +46,8 @@ class SavedMovieViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.view.backgroundColor = ALColor.c1
+        
     }
     
     func fetchSavedMovies() {

@@ -10,16 +10,20 @@ import UIKit
 
 class ProfileTableViewController: UITableViewController {
     
-    @IBOutlet weak var savedItemLabel: UILabel!
+    @IBOutlet weak var currentSavedLabel: UILabel!
+    @IBOutlet weak var currentColorLabel: UILabel!
     @IBOutlet weak var themeColorLabel: UILabel!
+    @IBOutlet weak var savedLabel: UILabel!
     
     var dataCount = 0 {
         
         didSet {
             
-            savedItemLabel.text = "共有 \(dataCount) 項收藏"
+            currentSavedLabel.text = "Saved \(dataCount) items"
         }
     }
+    
+    var currentThemeColor: ThemeColor = ThemeColor.dark
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,31 @@ class ProfileTableViewController: UITableViewController {
                                                object: nil)
         
         fetchData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.view.backgroundColor = ALColor.c1
+        
+        currentSavedLabel.textColor = ALColor.c2
+        currentColorLabel.textColor = ALColor.c2
+        
+        savedLabel.textColor = ALColor.c5
+        themeColorLabel.textColor = ALColor.c5
+        
+        setupNavigationBar()
+        
+    }
+    
+    func setupNavigationBar() {
+        
+        self.navigationController?.navigationBar.barTintColor = ALColor.c1
+        self.navigationController?.navigationBar.tintColor = ALColor.c4
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: ALColor.c2,
+                              NSAttributedString.Key.font: UIFont(name: "copperplate", size: 25)!]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
     }
     
     func fetchData() {
@@ -59,5 +88,65 @@ class ProfileTableViewController: UITableViewController {
         
         fetchData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showThemeColorSegue" {
+            
+            if let themeColorVC = segue.destination as? ThemeColorTableViewController {
+                
+                themeColorVC.themeColorDelegate = self
+                
+                switch currentThemeColor {
+                case .dark:
+                    
+                    themeColorVC.selectedCell = 0
+                    
+                default:
+                    
+                    themeColorVC.selectedCell = 1
+                    
+                }
+                
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let cells = tableView.visibleCells
+        
+        for cell in cells {
+            cell.backgroundColor = ALColor.c6
+            
+        }
+       
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        
+        header.backgroundView?.backgroundColor = ALColor.c1
+        
+    }
+    
+}
+
+extension ProfileTableViewController: ThemeColorTableVCDelegate {
+    
+    func changeThemeColorLabel(to theme: ThemeColor) {
+        
+        switch theme {
+        case .dark:
+            
+            currentColorLabel.text = "Dark"
+            currentThemeColor = .dark
+            
+        default:
+            
+            currentColorLabel.text = "Bright"
+            currentThemeColor = .bright
+
+        }
+        
+    }
+    
     
 }

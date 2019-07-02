@@ -17,6 +17,7 @@
 		A8DEF87422BF8179007ACFE1 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */; };
 		A8DEF87622BFCA22007ACFE1 /* ALButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87522BFCA22007ACFE1 /* ALButton.swift */; };
 		A8DEF87822C0629F007ACFE1 /* ThemeColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87722C0629F007ACFE1 /* ThemeColorTableViewController.swift */; };
+		A8DEF87A22C0A3AC007ACFE1 /* ALStaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DEF87922C0A3AC007ACFE1 /* ALStaticTableViewCell.swift */; };
 		A8F2D9BD22BA793C00AE84D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */; };
 		A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */; };
 		A8F2D9C222BA793C00AE84D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F2D9C022BA793C00AE84D1 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		A8DEF87522BFCA22007ACFE1 /* ALButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALButton.swift; sourceTree = "<group>"; };
 		A8DEF87722C0629F007ACFE1 /* ThemeColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorTableViewController.swift; sourceTree = "<group>"; };
+		A8DEF87922C0A3AC007ACFE1 /* ALStaticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALStaticTableViewCell.swift; sourceTree = "<group>"; };
 		A8F2D9B922BA793C00AE84D1 /* Apple_iTune_practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_iTune_practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8F2D9BE22BA793C00AE84D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,11 @@
 				A8DEF86D22BF331B007ACFE1 /* ContentMode.swift */,
 				A8DEF87122BF7997007ACFE1 /* Notification+Extension.swift */,
 				A8DEF87322BF8179007ACFE1 /* ThemeColor.swift */,
+				A8F2D9E822BC60A400AE84D1 /* Music.swift */,
+				A8F2D9D522BB53FB00AE84D1 /* Movie.swift */,
+				A8F2D9D722BB56DA00AE84D1 /* AppStoreClient.swift */,
+				A8F2D9D922BB588E00AE84D1 /* NetworkProcessor.swift */,
+				A8F2D9D322BB4A1800AE84D1 /* AppStoreEndpoint.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -124,9 +131,9 @@
 		A8F2D9BB22BA793C00AE84D1 /* Apple_iTune_practice */ = {
 			isa = PBXGroup;
 			children = (
-				A8DEF86C22BF330A007ACFE1 /* Model */,
 				A8F2D9BC22BA793C00AE84D1 /* AppDelegate.swift */,
 				A8F2D9C022BA793C00AE84D1 /* Main.storyboard */,
+				A8DEF86C22BF330A007ACFE1 /* Model */,
 				A8F2D9DD22BBBC1200AE84D1 /* Controller */,
 				A8F2D9DC22BBBC0D00AE84D1 /* View */,
 				A8F2D9DB22BBBBF800AE84D1 /* Model */,
@@ -141,11 +148,6 @@
 		A8F2D9DB22BBBBF800AE84D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A8F2D9E822BC60A400AE84D1 /* Music.swift */,
-				A8F2D9D522BB53FB00AE84D1 /* Movie.swift */,
-				A8F2D9D722BB56DA00AE84D1 /* AppStoreClient.swift */,
-				A8F2D9D922BB588E00AE84D1 /* NetworkProcessor.swift */,
-				A8F2D9D322BB4A1800AE84D1 /* AppStoreEndpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 				A8F2D9F322BC76B500AE84D1 /* CollectionReusableView.swift */,
 				A8F2D9F422BC76B500AE84D1 /* CollectionReusableView.xib */,
 				A8DEF87522BFCA22007ACFE1 /* ALButton.swift */,
+				A8DEF87922C0A3AC007ACFE1 /* ALStaticTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				A8F2D9D822BB56DA00AE84D1 /* AppStoreClient.swift in Sources */,
 				A8F2D9BF22BA793C00AE84D1 /* SearchViewController.swift in Sources */,
+				A8DEF87A22C0A3AC007ACFE1 /* ALStaticTableViewCell.swift in Sources */,
 				A8DEF87022BF6F22007ACFE1 /* SavedMusicViewController.swift in Sources */,
 				A8DEF86722BE266E007ACFE1 /* SavedViewController.swift in Sources */,
 				A8F2D9DA22BB588E00AE84D1 /* NetworkProcessor.swift in Sources */,

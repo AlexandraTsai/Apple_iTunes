@@ -24,7 +24,8 @@ class ALButton: UIButton {
     
     func setupBtn() {
         
-        self.backgroundColor = ALColor.c1
+        self.backgroundColor = ALColor.c2
         self.layer.cornerRadius = 5
+        self.setTitleColor(ALColor.c3, for: .normal)
     }
 }

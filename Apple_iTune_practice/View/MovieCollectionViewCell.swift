@@ -28,9 +28,21 @@ class MovieCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.layer.borderColor = ALColor.c1.cgColor
+        self.backgroundColor = ALColor.c1
+        
+        self.layer.borderColor = ALColor.c2.cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 20
+        
+        trackName.textColor = ALColor.c2
+        artistName.textColor = ALColor.c5
+        collectionName.textColor = ALColor.c5
+        timeLabel.textColor = ALColor.c5
+        descriptionLabel.textColor = ALColor.c5
+        
+        savedButton.backgroundColor = ALColor.c2
+        unsavedButton.backgroundColor = ALColor.c2
+        
     }
     
     @IBAction func saveBtnTapped(_ sender: UIButton) {
@@ -129,5 +141,15 @@ class MovieCollectionViewCell: UICollectionViewCell {
             
         })
     }
+    
+//    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+//
+//        descriptionLabel.preferredMaxLayoutWidth = layoutAttributes.size.width - contentView.layoutMargins.left - contentView.layoutMargins.left
+//
+//        layoutAttributes.bounds.size.height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+//
+//        return layoutAttributes
+//
+//    }
 
 }

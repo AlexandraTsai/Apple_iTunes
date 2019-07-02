@@ -16,12 +16,22 @@ class MusicCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var savedButton: UIButton!
+    
     var timeMillis: Int = 0
     var url: URL?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        trackName.textColor = ALColor.c2
+        artistName.textColor = ALColor.c5
+        collectionName.textColor = ALColor.c5
+        timeLabel.textColor = ALColor.c5
+
+        savedButton.backgroundColor = ALColor.c2
+        savedButton.setTitleColor(ALColor.c3, for: .normal) 
     }
     
     @IBAction func saveBtnTapped(_ sender: UIButton) {

@@ -14,8 +14,10 @@ class CollectionReusableView: UICollectionReusableView {
     
     let sectionHeaderLabel: UILabel = {
         
-        let label = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 20))
+        let label = UILabel(frame: CGRect(x: 10, y: 10, width: 100, height: 25))
         label.text = "TEST"
+        
+        label.font = UIFont(name: "copperplate-bold", size: 25)
         
         return label
     }()
@@ -45,7 +47,7 @@ class CollectionReusableView: UICollectionReusableView {
     
     func setup() {
         
-        self.backgroundColor = ALColor.c1
+        self.backgroundColor = ALColor.c3
     }
    
 }
