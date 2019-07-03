@@ -34,6 +34,8 @@ class ProfileTableViewController: UITableViewController {
                                                object: nil)
         
         fetchData()
+        
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,18 +48,20 @@ class ProfileTableViewController: UITableViewController {
         savedLabel.textColor = ALColor.c5
         themeColorLabel.textColor = ALColor.c5
         
-        setupNavigationBar()
+        self.tableView.reloadData()
+        self.tabBarController?.tabBar.tintColor = ALColor.c4
+        self.tabBarController?.tabBar.barTintColor = ALColor.c1
         
     }
     
     func setupNavigationBar() {
         
-        self.navigationController?.navigationBar.barTintColor = ALColor.c1
-        self.navigationController?.navigationBar.tintColor = ALColor.c4
-        
         let textAttributes = [NSAttributedString.Key.foregroundColor: ALColor.c2,
                               NSAttributedString.Key.font: UIFont(name: "copperplate", size: 25)!]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        self.navigationController?.navigationBar.barTintColor = ALColor.c1
+        self.navigationController?.navigationBar.tintColor = ALColor.c4
         
     }
     

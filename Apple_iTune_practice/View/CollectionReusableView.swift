@@ -35,9 +35,7 @@ class CollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         
         self.addSubview(sectionHeaderLabel)
-        
-        setup()
-        
+                
     }
     
     required init?(coder aDecoder: NSCoder) {

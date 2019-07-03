@@ -23,14 +23,17 @@ class MusicCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+//        self.layer.borderColor = ALColor.c5.cgColor
+//        self.layer.borderWidth = 2
+//        self.layer.cornerRadius = 20
         
         trackName.textColor = ALColor.c2
         artistName.textColor = ALColor.c5
         collectionName.textColor = ALColor.c5
         timeLabel.textColor = ALColor.c5
 
-        savedButton.backgroundColor = ALColor.c2
+        savedButton.backgroundColor = ALColor.c8
         savedButton.setTitleColor(ALColor.c3, for: .normal) 
     }
     

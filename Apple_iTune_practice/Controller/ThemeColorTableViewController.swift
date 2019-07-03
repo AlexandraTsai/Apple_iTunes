@@ -32,6 +32,7 @@ class ThemeColorTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
                 
        let cell = tableView.cellForRow(at: NSIndexPath(row: selectedCell, section: 0) as IndexPath)
         
@@ -39,15 +40,6 @@ class ThemeColorTableViewController: UITableViewController {
         
         self.view.backgroundColor = ALColor.c1
     
-    }
-    
-    func setupCell() {
-        
-        let cell = tableView.cellForRow(at: NSIndexPath(row: selectedCell, section: 0) as IndexPath)
-        cell?.layer.borderColor = UIColor.gray.cgColor
-        cell?.layer.borderWidth = 1
-
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,15 +64,51 @@ class ThemeColorTableViewController: UITableViewController {
         default:
             themeColorDelegate?.changeThemeColorLabel(to: .bright)
             ALColor.theme = .bright
+            
         }
+        
+        changeThemeColor()
         
     }
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
+        for cell in tableView.visibleCells {
+            
+            cell.backgroundColor = ALColor.c6
+        }
+        
         guard let header = view as? UITableViewHeaderFooterView else { return }
         
         header.backgroundView?.backgroundColor = ALColor.c1
         
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = UIView()
+        footerView.backgroundColor = ALColor.c1
+        
+        return footerView
+    }
+    
+    func changeThemeColor() {
+        
+        //Navigation bar
+        let textAttributes = [NSAttributedString.Key.foregroundColor: ALColor.c2,
+                              NSAttributedString.Key.font: UIFont(name: "copperplate", size: 25)!]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        self.navigationController?.navigationBar.barTintColor = ALColor.c1
+        self.navigationController?.navigationBar.tintColor = ALColor.c4
+        
+        //Tab Bar
+        self.tabBarController?.tabBar.tintColor = ALColor.c4
+        self.tabBarController?.tabBar.barTintColor = ALColor.c1
+        
+        self.view.backgroundColor = ALColor.c1
+        
+        tableView.reloadData()
+
     }
 }

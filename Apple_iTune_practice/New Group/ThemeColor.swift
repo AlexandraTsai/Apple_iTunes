@@ -26,7 +26,11 @@ class ALColor {
                 
                 ALColor.c1 = UIColor.white
                 ALColor.c2 = UIColor.black
-                ALColor.c3 = UIColor.darkGreen
+                ALColor.c3 = UIColor.white
+                ALColor.c4 = UIColor.darkRed
+                ALColor.c6 = UIColor.white
+                ALColor.c7 = UIColor.mediumGray
+                ALColor.c8 = UIColor.lightBlue
                 
             default:
                 
@@ -34,7 +38,9 @@ class ALColor {
                 ALColor.c2 = UIColor.white
                 ALColor.c3 = UIColor.white
                 ALColor.c4 = UIColor.darkRed
-
+                ALColor.c6 = UIColor.mediumGray
+                ALColor.c7 = UIColor.white
+                ALColor.c8 = UIColor.white
             }
         }
     }
@@ -51,7 +57,9 @@ class ALColor {
     
     static var c6 = UIColor.mediumGray //static cell
     
- 
+    static var c7 = UIColor.white //Header title
+    
+    static var c8 = UIColor.white //Save Button
 }
 
 extension UIColor {
@@ -65,4 +73,7 @@ extension UIColor {
     
     //Red #C1424F
     static let darkRed = UIColor(red: 213/255, green: 66/255, blue: 79/255, alpha: 1)
+    
+    //Blue #C1424F
+    static let lightBlue = UIColor(red: 82/255, green: 113/255, blue: 161/255, alpha: 1)
 }

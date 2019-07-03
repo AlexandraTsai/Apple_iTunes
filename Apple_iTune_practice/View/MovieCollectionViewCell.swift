@@ -30,9 +30,14 @@ class MovieCollectionViewCell: UICollectionViewCell {
         
         self.backgroundColor = ALColor.c1
         
-        self.layer.borderColor = ALColor.c2.cgColor
+        self.layer.borderColor = ALColor.c5.cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = 20
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 2, height: 4)
+        self.layer.shadowRadius = 10
+        self.layer.shadowOpacity = 1
         
         trackName.textColor = ALColor.c2
         artistName.textColor = ALColor.c5
@@ -40,8 +45,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
         timeLabel.textColor = ALColor.c5
         descriptionLabel.textColor = ALColor.c5
         
-        savedButton.backgroundColor = ALColor.c2
-        unsavedButton.backgroundColor = ALColor.c2
+        savedButton.backgroundColor = ALColor.c8
+        unsavedButton.backgroundColor = ALColor.c8
         
     }
     

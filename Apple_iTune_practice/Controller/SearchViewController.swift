@@ -66,6 +66,7 @@ class SearchViewController: UIViewController {
         
         self.tabBarController?.tabBar.tintColor = ALColor.c4
         self.tabBarController?.tabBar.barTintColor = ALColor.c1
+        
     }
     
     func fetchSavedMovies() {
@@ -218,7 +219,9 @@ extension SearchViewController: UICollectionViewDataSource {
             headerCell.sectionHeaderLabel.text = "Music"
         }
         
-        headerCell.sectionHeaderLabel.textColor = ALColor.c2
+        headerCell.sectionHeaderLabel.textColor = ALColor.c7
+        
+        headerCell.backgroundColor = ALColor.c3
         
         return headerCell
         
