@@ -15,6 +15,7 @@ struct Music: Codable {
     var minute: Int
     var collection: String
     var artworkUrl: URL?
+    var trackViewUrl: URL?
     
     private struct APIKeys {
         static let name = "trackName"
@@ -22,6 +23,8 @@ struct Music: Codable {
         static let collection = "collectionName"
         static let artist = "artistName"
         static let artworkURL = "artworkUrl100"
+        static let trackViewURL = "trackViewUrl"
+
     }
     
     init?(dictionary: [String : Any]) {
@@ -29,7 +32,8 @@ struct Music: Codable {
             let artistName = dictionary[APIKeys.artist] as? String,
             let timeMillis = dictionary[APIKeys.timeMillis] as? Int,
             let collection = dictionary[APIKeys.collection] as? String,
-            let artworkURLString = dictionary[APIKeys.artworkURL] as? String else {
+            let artworkURLString = dictionary[APIKeys.artworkURL] as? String,
+            let trackURL = dictionary[APIKeys.trackViewURL] as? String else {
                 return nil
         }
         
@@ -37,6 +41,7 @@ struct Music: Codable {
         self.artist = artistName
         self.collection = collection
         self.artworkUrl = URL(string: artworkURLString)
+        self.trackViewUrl = URL(string: trackURL)
         
         let time = timeMillis/60000
         self.hour = time/60

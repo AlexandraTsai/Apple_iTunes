@@ -54,6 +54,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
     
         fetchSavedMovies()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,14 +154,10 @@ extension SearchViewController: UICollectionViewDataSource {
             
             if ((savedMovies?.filter({$0.name == app?.name && $0.artworkUrl == app?.artworkUrl && $0.description == app?.description })) != nil) {
                 
-                print("===============================")
-                print("Already saved")
-                
                 movieCell.unsavedButton.alpha = 1
                 
             } else {
                 
-                print("unsaved")
                 movieCell.unsavedButton.alpha = 0
             }
             
@@ -235,11 +232,30 @@ extension SearchViewController: UICollectionViewDataSource {
     
 }
 
+extension SearchViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch indexPath.section {
+        case 0:
+            
+            guard let url = movies?[indexPath.item].trackViewUrl else { return }
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
+        default:
+            
+            guard let url = musics?[indexPath.item].trackViewUrl else { return }
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+    }
+}
+
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-//        collectionViewLayout.estimatedItemSize
         
         switch indexPath.section {
         case 0:
@@ -292,6 +308,8 @@ extension SearchViewController: UISearchBarDelegate {
             
             term = text
         }
+        
+        searchBar.endEditing(true)
         
     }
 

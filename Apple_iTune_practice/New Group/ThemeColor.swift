@@ -28,7 +28,7 @@ class ALColor {
                 ALColor.c2 = UIColor.black
                 ALColor.c3 = UIColor.white
                 ALColor.c4 = UIColor.darkRed
-                ALColor.c6 = UIColor.white
+                ALColor.c6 = UIColor.lightRed
                 ALColor.c7 = UIColor.mediumGray
                 ALColor.c8 = UIColor.lightBlue
                 
@@ -36,7 +36,7 @@ class ALColor {
                 
                 ALColor.c1 = UIColor.darkGray
                 ALColor.c2 = UIColor.white
-                ALColor.c3 = UIColor.white
+                ALColor.c3 = UIColor.black
                 ALColor.c4 = UIColor.darkRed
                 ALColor.c6 = UIColor.mediumGray
                 ALColor.c7 = UIColor.white
@@ -73,6 +73,8 @@ extension UIColor {
     
     //Red #C1424F
     static let darkRed = UIColor(red: 213/255, green: 66/255, blue: 79/255, alpha: 1)
+    
+    static let lightRed = UIColor(red: 213/255, green: 66/255, blue: 79/255, alpha: 0.5)
     
     //Blue #C1424F
     static let lightBlue = UIColor(red: 82/255, green: 113/255, blue: 161/255, alpha: 1)
